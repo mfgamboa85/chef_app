@@ -5,21 +5,36 @@ import { getRecipeFromMistral } from "./ai"
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState([])
-    const [recipeShown, setRecipeShown] = React.useState("")
+    const [recipeShown, setRecipeShown] = React.useState(false)
+    const [loaderShown, setLoaderShown] = React.useState(false)
+    const [errorShown, setErrorShown] = React.useState(false)
     const [recipe, setRecipe] = React.useState("")
 
     async function getRecipe() {
+        // hide error if any
+        setErrorShown(false)
+        // set loading spinner
+        setLoaderShown(true)
+        
         getRecipeFromMistral(ingredients)
             .then(res => {
-                setRecipeShown(true)
+                // unset loading spinner
+                setLoaderShown(false)
+                // save recipe in state
                 setRecipe(res)
+                setRecipeShown(true)
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                // unset loading spinner
+                setLoaderShown(false)
+                // set error message
+                setErrorShown(err)
+            })
     }
 
     function addIngredient(formData) {
         const newIngredient = formData.get("ingredient")
-        setIngredients(prevIngredients => [...prevIngredients, newIngredient])
+        newIngredient.replace(/ /g, "") && setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
 
     return (
@@ -40,8 +55,9 @@ export default function Main() {
                     getRecipe={getRecipe}
                 />
             }
-
             {recipeShown && <ClaudeRecipe recipe={recipe} />}
+            {loaderShown && !recipeShown  && <div className="loader loader-msg">Creating your recipe...</div>}
+            {errorShown && <div className="error error-msg">Something went wrong with your request. Try again later</div>}
         </main>
     )
 }
