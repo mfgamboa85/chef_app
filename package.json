@@ -1,6 +1,6 @@
 {
-  "name": "Scrim-s06ivf6",
-  "description": "https://scrimba.com/frontend-path-c0j/~0z7v/s0kcvf4e23/head",
+  "name": "AI Chef Claude",
+  "description": "Small AI API project to showcase abilities in AI API data manipulation",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -14,6 +14,7 @@
     "git-cli": "^0.11.0",
     "react": "19.0.0-rc-8b08e99e-20240713",
     "react-dom": "19.0.0-rc-8b08e99e-20240713",
+    "react-markdown": "^10.0.1",
     "vite": "latest"
   },
   "devDependencies": {
