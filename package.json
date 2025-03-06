@@ -1,0 +1,22 @@
+{
+  "name": "Scrim-s06ivf6",
+  "description": "https://scrimba.com/frontend-path-c0j/~0z7v/s0kcvf4e23/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.27.3",
+    "@huggingface/inference": "2.8.1",
+    "git": "^0.1.5",
+    "git-cli": "^0.11.0",
+    "react": "19.0.0-rc-8b08e99e-20240713",
+    "react-dom": "19.0.0-rc-8b08e99e-20240713",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "*"
+  }
+}
