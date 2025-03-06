@@ -3,6 +3,8 @@
   "description": "Small AI API project to showcase abilities in AI API data manipulation",
   "scripts": {
     "start": "vite",
+    "predeploy": "npm run build",
+    "deploy": "chef-app-ghpage -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -18,6 +20,7 @@
     "vite": "latest"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "*"
+    "@vitejs/plugin-react": "*",
+    "gh-pages": "^6.3.0"
   }
 }
