@@ -13,5 +13,8 @@ You need to set your own API keys in ai.js for the project to run
 # Branches
 Main branch -> main
 
+# GitHub page
+You can visit the GitHub page in: https://mfgamboa85.github.io/chef_app/
+
 
 Happy Coding!

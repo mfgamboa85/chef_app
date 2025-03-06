@@ -4,7 +4,7 @@
   "scripts": {
     "start": "vite",
     "predeploy": "npm run build",
-    "deploy": "chef-app-ghpage -d dist",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
